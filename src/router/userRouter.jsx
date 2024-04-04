@@ -7,9 +7,9 @@ import SideBar from "../components/sidebar";
 function UserRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Welcome />} />
-      <Route path="/view" element={<View />} />
-      <Route path="/side" element={<SideBar />} />
+      <Route exact path="/" element={<Welcome />} />
+      <Route exact path="/view" element={<View />} />
+      <Route exact path="/side" element={<SideBar />} />
     </Routes>
   );
 }
