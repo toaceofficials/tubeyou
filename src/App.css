@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(2, 16, 57);
+}
+
+/* Resetting scrollbar styles */
+html::-webkit-scrollbar {
+  width: 10px; /* Adjust width as needed */
+}
+
+/* Setting scrollbar thumb, track, and button colors */
+html::-webkit-scrollbar-thumb {
+  background: #808080; /* Gray color for track */
+}
+
+html::-webkit-scrollbar-track {
+  background: #000000; /* Black color for thumb */
+}
+
+html::-webkit-scrollbar-button {
+  width: 12px;
+  height: 12px;
+  background: #000000; /* Gray color for buttons */
+  border: 1px solid #808080; /* Black border for button */
+  background-image: url("./public/typlayb.svg"); /* Replace 'up_down_arrow.png' with the path to your arrow icons */
+  background-size: 8px; /* Adjust the size of the arrow icons */
+  background-repeat: no-repeat; /* Prevent the icons from repeating */
+  background-position: center; /* Center the icons within the button */
+}

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import  UserRoutes  from "./router/userRouter";
-
+import UserRoutes from "./router/userRouter";
+import "./App.css";
 
 export default function App() {
   return (
@@ -11,3 +11,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+

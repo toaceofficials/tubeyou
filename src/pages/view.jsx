@@ -10,7 +10,7 @@ const View = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const contentClasses = classNames(
-    "ml-0 transition duration-200 ease-in-out",
+    "ml-0 transition duration-300 ease-in-out h-screen",
     isOpen ? "pl-64" : "pl-16"
   );
   return (
@@ -19,7 +19,7 @@ const View = () => {
       <div className={contentClasses}>
         <div className="min-h-screen bg-gray-950 w-full  flex flex-row pt-2">
           <div
-            class=" w-4/6 overflow-y-scroll overscroll-y-auto h-screen scrollbar-hidden"
+            class="w-full sm:w-4/6 overflow-y-scroll overscroll-y-auto h-screen scrollbar-hidden "
             style={{
               // Hide scrollbar for Chrome, Safari, and Opera
               WebkitOverflowScrolling: "touch",
@@ -29,11 +29,11 @@ const View = () => {
           >
             <div className="flex flex-col text-white mx-auto w-5/6 bg-gray-950 px-3 py-5  rounded-lg  ">
               <div className="w-full">
-                <div className="flex flex-col min-auto">
+                <div className="flex flex-col ">
                   <img
                     src={ty_button_play}
                     alt=""
-                    className="w-full h-80 my-20  mx-auto  rounded-lg"
+                    className="h-32 my-1 lg:w-full h-80  mx-auto rounded-lg md:my-20"
                   />
                 </div>
               </div>
@@ -316,47 +316,95 @@ const View = () => {
               </div> */}
             </div>
           </div>
-          <div className=" w-2/6 text-white ">
-            <div className="h-auto bg-black-200  w-4/5 rounded-lg border  border-cyan-950	max-h-80">
+          <div className=" hidden md:block  w-2/6 text-white ">
+            <div className=" bg-black-200  w-4/5 rounded-lg border  border-cyan-950	">
               <div className="h-10 p-2 font-bold text-sm py-auto ">
                 Popural playlist
               </div>
               <hr />
-              <div className=" flex flex-col py-3  ">
-                <div className=" h-20  mx-4 rounded-md flex flex-row items-center hover:bg-gray-800 ">
-                  <div className="w-2/6 h-16 mx-2 rounded-md bg-gray-100"></div>
-                  <div className="w-3/6 h-16  ">
-                    {" "}
-                    <p> The best verses </p>
-                    <p>Adilsha</p>
+              <div
+                className="overflow-y-scroll overscroll-y-auto scrollbar-hidden "
+                style={{
+                  height: "500px",
+                  // Hide scrollbar for Chrome, Safari, and Opera
+                  WebkitOverflowScrolling: "touch",
+                  scrollbarWidth: "none", // Hide scrollbar for Firefox
+                  msOverflowStyle: "none", // Hide scrollbar for Internet Explorer and Edge
+                }}
+              >
+                <div className=" flex flex-col py-3  ">
+                  <div className=" h-20  mx-4 rounded-md flex flex-row items-center hover:bg-gray-800 ">
+                    <div className="w-1/6 h-16 flex flex-row justify-center items-center ">
+                      <p>12</p>
+                      <img src={ty_button_play} alt="" className="h-4 pl-1" />
+                    </div>
+                    <div className="w-2/6 h-16 mx-2 rounded-md bg-gray-100"></div>
+                    <div className="w-3/6 h-16  ">
+                      {" "}
+                      <p> The best verses </p>
+                      <p>Adilsha</p>
+                    </div>
                   </div>
-                  <div className="w-1/6 h-16 flex flex-row justify-center items-center ">
-                    <p>12</p>
-                    <img src={ty_button_play} alt="" className="h-4 pl-1" />
+                  <div className=" h-20  mx-4 rounded-md flex flex-row items-center hover:bg-gray-800 ">
+                    <div className="w-1/6 h-16 flex flex-row justify-center items-center ">
+                      <p>12</p>
+                      <img src={ty_button_play} alt="" className="h-4 pl-1" />
+                    </div>
+                    <div className="w-2/6 h-16 mx-2 rounded-md bg-gray-100"></div>
+                    <div className="w-3/6 h-16  ">
+                      {" "}
+                      <p> The best verses </p>
+                      <p>Adilsha</p>
+                    </div>
                   </div>
-                </div>
-                <div className=" h-20 mx-4 rounded-md flex flex-row items-center hover:bg-gray-800">
-                  <div className="w-2/6 h-16 mx-2 rounded-md bg-gray-100"></div>
-                  <div className="w-3/6 h-16  ">
-                    {" "}
-                    <p> The best verses </p>
-                    <p>Adilsha</p>
+                  <div className=" h-20  mx-4 rounded-md flex flex-row items-center hover:bg-gray-800 ">
+                    <div className="w-1/6 h-16 flex flex-row justify-center items-center ">
+                      <p>12</p>
+                      <img src={ty_button_play} alt="" className="h-4 pl-1" />
+                    </div>
+                    <div className="w-2/6 h-16 mx-2 rounded-md bg-gray-100"></div>
+                    <div className="w-3/6 h-16  ">
+                      {" "}
+                      <p> The best verses </p>
+                      <p>Adilsha</p>
+                    </div>
                   </div>
-                  <div className="w-1/6 h-16 flex flex-row justify-center items-center ">
-                    <p>12</p>
-                    <img src={ty_button_play} alt="" className="h-4 pl-1" />
+                  <div className=" h-20  mx-4 rounded-md flex flex-row items-center hover:bg-gray-800 ">
+                    <div className="w-1/6 h-16 flex flex-row justify-center items-center ">
+                      <p>12</p>
+                      <img src={ty_button_play} alt="" className="h-4 pl-1" />
+                    </div>
+                    <div className="w-2/6 h-16 mx-2 rounded-md bg-gray-100"></div>
+                    <div className="w-3/6 h-16  ">
+                      {" "}
+                      <p> The best verses </p>
+                      <p>Adilsha</p>
+                    </div>
                   </div>
-                </div>
-                <div className=" h-20 mx-4 rounded-md flex flex-row items-center hover:bg-gray-800">
-                  <div className="w-2/6 h-16 mx-2 rounded-md bg-gray-100"></div>
-                  <div className="w-3/6 h-16  ">
-                    {" "}
-                    <p> The best verses </p>
-                    <p>Adilsha</p>
+
+                  <div className=" h-20  mx-4 rounded-md flex flex-row items-center hover:bg-gray-800 ">
+                    <div className="w-1/6 h-16 flex flex-row justify-center items-center ">
+                      <p>12</p>
+                      <img src={ty_button_play} alt="" className="h-4 pl-1" />
+                    </div>
+                    <div className="w-2/6 h-16 mx-2 rounded-md bg-gray-100"></div>
+                    <div className="w-3/6 h-16  ">
+                      {" "}
+                      <p> The best verses </p>
+                      <p>Adilsha</p>
+                    </div>
                   </div>
-                  <div className="w-1/6 h-16 flex flex-row justify-center items-center ">
-                    <p>12</p>
-                    <img src={ty_button_play} alt="" className="h-4 pl-1" />
+                  <div className=" h-20  mx-4 rounded-md flex flex-row items-center hover:bg-gray-800 ">
+                    <div className="w-1/6 h-16 flex flex-row justify-center items-center ">
+                      <p>12</p>
+                      <img src={ty_button_play} alt="" className="h-4 pl-1" />
+                    </div>
+                    <div className="w-2/6 h-16 mx-2 rounded-md bg-gray-100"></div>
+                    <div className="w-3/6 h-16  ">
+                      {" "}
+                      <p> The best verses </p>
+                      <p>Adilsha</p>
+                    </div>
                   </div>
                 </div>
               </div>
