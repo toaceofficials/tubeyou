@@ -4,22 +4,15 @@ import classNames from "classnames";
 import ty_button_play from "../public/typlayb.svg";
 import blackhole from "../public/blackhole.svg";
 
-import SideBar from "../components/sidebar";
 
 const View = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const contentClasses = classNames(
-    "ml-0 transition duration-300 ease-in-out h-screen",
-    isOpen ? "pl-64" : "pl-16"
-  );
+  
   return (
     <>
-      <SideBar />
-      <div className={contentClasses}>
+     
         <div className="min-h-screen bg-gray-950 w-full  flex flex-row pt-2">
           <div
-            class="w-full sm:w-4/6 overflow-y-scroll overscroll-y-auto h-screen scrollbar-hidden "
+            className="w-full sm:w-4/6 overflow-y-scroll overscroll-y-auto h-screen scrollbar-hidden "
             style={{
               // Hide scrollbar for Chrome, Safari, and Opera
               WebkitOverflowScrolling: "touch",
@@ -410,7 +403,6 @@ const View = () => {
               </div>
             </div>
           </div>{" "}
-        </div>
       </div>
     </>
   );
