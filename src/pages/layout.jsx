@@ -8,7 +8,7 @@ const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const contentClasses = classNames(
-    "pl-16 ml-0 transition duration-200 ease-in-out h-screen ",
+    "pl-14 transition duration-200 ease-in-out h-screen ",
 
     isOpen ? "" : ""
   );

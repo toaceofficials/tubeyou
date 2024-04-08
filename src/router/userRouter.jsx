@@ -4,6 +4,7 @@ import Welcome from "../pages/welcome";
 import View from "../pages/view";
 import SideBar from "../components/sidebar";
 import Layout from "../pages/layout";
+import Create from "../pages/create";
 
 function UserRoutes() {
   return (
@@ -12,6 +13,7 @@ function UserRoutes() {
         <Route exact path="/" element={<Welcome />} />
         <Route exact path="/view" element={<View />} />
         <Route exact path="/side" element={<SideBar />} />
+        <Route exact path="/create" element={<Create />} />
       </Route>
     </Routes>
   );

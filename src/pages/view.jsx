@@ -20,7 +20,7 @@ const View = () => {
               msOverflowStyle: "none", // Hide scrollbar for Internet Explorer and Edge
             }}
           >
-            <div className="flex flex-col text-white mx-auto w-5/6 bg-gray-950 px-3 py-5  rounded-lg  ">
+            <div className="flex flex-col text-white mx-auto  bg-gray-950 mx-10 py-5  rounded-lg  ">
               <div className="w-full">
                 <div className="flex flex-col ">
                   <img
@@ -310,7 +310,7 @@ const View = () => {
             </div>
           </div>
           <div className=" hidden md:block  w-2/6 text-white ">
-            <div className=" bg-black-200  w-4/5 rounded-lg border  border-cyan-950	">
+            <div className=" bg-black-200   rounded-lg border  border-cyan-950	mx-10">
               <div className="h-10 p-2 font-bold text-sm py-auto ">
                 Popural playlist
               </div>
