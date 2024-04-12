@@ -23,6 +23,7 @@ const Welcome = () => {
       console.error("An error occurred:", error);
     },
   });
+  let adsbygoogle;
 
   useEffect(() => {
     // Load AdSense ads
@@ -36,14 +37,14 @@ const Welcome = () => {
           {" "}
           <script
             async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-12848501732daweewfewfewew04460"
-            crossorigin="anonymous"
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1284850173204460"
+            crossOrigin="anonymous"
           ></script>
-          {/* Placeholder for AdSense ad */}
+          {/* <!-- first portions --> */}
           <ins
             className="adsbygoogle"
             style={{ display: "block" }}
-            data-ad-client="ca-pub-dewdeewc"
+            data-ad-client="ca-pub-1284850173204460"
             data-ad-slot="1391362237"
             data-ad-format="auto"
             data-full-width-responsive="true"
