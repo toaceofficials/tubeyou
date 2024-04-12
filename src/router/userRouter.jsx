@@ -11,7 +11,7 @@ function UserRoutes() {
     <Routes>
       <Route element={<Layout />}>
         <Route exact path="/" element={<Welcome />} />
-        <Route exact path="/view" element={<View />} />
+        <Route exact path="/view/:playkey" element={<View />} />
         <Route exact path="/side" element={<SideBar />} />
         <Route exact path="/create" element={<Create />} />
       </Route>

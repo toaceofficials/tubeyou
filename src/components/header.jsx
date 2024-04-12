@@ -45,14 +45,12 @@ const Header = ({CloseSuggestion}) => {
   }, []); // Empty dependency array means it only runs once after the initial render
 
   return (
-    <header
-      className=" bg-gray-800 text-white py-2"
-    >
+    <header className=" text-white py-2 fixed top-0 z-10 w-full bg-zinc-900">
       <div className="container mx-auto flex items-center">
         {!isOpenBar ? (
           <div className="w-5/6 flex flex-row items-center md:w-1/6 ">
             <svg
-              className=" h-6 text-white mx-3"
+              className=" h-6 text-white "
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

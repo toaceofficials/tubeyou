@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(17 24 39);
+  background-color: rgb(24 24 27);
+  /* tail - bg-zinc-900	 */
 }
 
 /* Resetting scrollbar styles */
@@ -27,4 +28,24 @@ html::-webkit-scrollbar-button {
   background-size: 8px; /* Adjust the size of the arrow icons */
   background-repeat: no-repeat; /* Prevent the icons from repeating */
   background-position: center; /* Center the icons within the button */
+}
+
+.mini-screen {
+  width: 300px; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+  border: 1px solid #000; /* Add border if desired */
+  position: fixed; /* Fix position relative to the browser window */
+  bottom: 20px; /* Adjust distance from bottom */
+  right: 20px; /* Adjust distance from right */
+  background-color: #fff; /* Background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  z-index: 9999; /* Adjust z-index to ensure it's above other content */
+  display: none; /* Initially hide mini-screen */
+}
+.mini-screen.visible {
+  display: block;
+}
+
+.mini-screen.hidden {
+  display: none;
 }
