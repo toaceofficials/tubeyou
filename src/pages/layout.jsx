@@ -19,13 +19,13 @@ const Layout = () => {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1284850173204460"
           crossorigin="anonymous"
         ></script>
-      </Helmet>
+      </Helmet> */}
       <SideBar onToggle={handleSidebarToggle} />
       {isOpen && (
         <div

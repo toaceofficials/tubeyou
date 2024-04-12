@@ -26,28 +26,41 @@ const Welcome = () => {
   let adsbygoogle;
 
   useEffect(() => {
-    // Load AdSense ads
-    (adsbygoogle = window.adsbygoogle || []).push({});
+    const pushAd = () => {
+      try {
+        console.log('hai');
+        const adsbygoogle = window.adsbygoogle;
+        adsbygoogle.push({});
+        console.log(adsbygoogle);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+     let interval = setInterval(() => {
+       // Check if Adsense script is loaded every 300ms
+       if (window?.adsbygoogle) {
+         pushAd();
+         // clear the interval once the ad is pushed so that function isn't called indefinitely
+         clearInterval(interval);
+       }
+     }, 300);
+
+     return () => {
+       clearInterval(interval);
+     };
   }, []);
   console.log(data?.data?.data);
   return (
     <>
       <div className=" w-full ">
         <div className="flex text-white mx-auto px-12">
-          {" "}
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1284850173204460"
-            crossOrigin="anonymous"
-          ></script>
-          {/* <!-- first portions --> */}
           <ins
             className="adsbygoogle"
-            style={{ display: "block" }}
+            style={{ display: "inline-block" }}
             data-ad-client="ca-pub-1284850173204460"
             data-ad-slot="1391362237"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
+            // data-ad-format="auto"
+            // data-full-width-responsive="true"
           ></ins>
         </div>
         <div className="flex flex-col w-full mt-3 mx-auto">
@@ -58,11 +71,8 @@ const Welcome = () => {
             <div className="grid gr20-cols-1 gap-y-8 place-content-center md:grid-cols-2 sm:grid-cols-2 mx-10 lg:grid-cols-4 lg:mx-28">
               {data?.data?.data.map((plays, i) => {
                 return (
-                  <Link to={`view/${plays?.listId}`}>
-                    <div
-                      className="w-60 flex flex-col h-40 text-white mx-auto rounded-lg mt-1 md:h-48 w-72"
-                      key={i + 1}
-                    >
+                  <Link to={`view/${plays?.listId}`} key={plays.listId}>
+                    <div className="w-60 flex flex-col h-40 text-white mx-auto rounded-lg mt-1 md:h-48 w-72">
                       <div className="flex items-center flex-row h-6">
                         <div className="  w-1/6 img w-4 h-4 ">
                           <img
