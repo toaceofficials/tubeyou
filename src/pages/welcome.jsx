@@ -59,8 +59,8 @@ const Welcome = () => {
             style={{ display: "inline-block" }}
             data-ad-client="ca-pub-1284850173204460"
             data-ad-slot="1391362237"
-            // data-ad-format="auto"
-            // data-full-width-responsive="true"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
           ></ins>
         </div>
         <div className="flex flex-col w-full mt-3 mx-auto">
