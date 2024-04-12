@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import classNames from "classnames";
 import SideBar from "../components/sidebar";
@@ -23,11 +23,32 @@ const Welcome = () => {
       console.error("An error occurred:", error);
     },
   });
+
+  useEffect(() => {
+    // Load AdSense ads
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  }, []);
   console.log(data?.data?.data);
   return (
     <>
       <div className=" w-full ">
-        <div className="flex text-white mx-auto px-12"></div>
+        <div className="flex text-white mx-auto px-12">
+          {" "}
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-12848501732daweewfewfewew04460"
+            crossorigin="anonymous"
+          ></script>
+          {/* Placeholder for AdSense ad */}
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-dewdeewc"
+            data-ad-slot="1391362237"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+        </div>
         <div className="flex flex-col w-full mt-3 mx-auto">
           <div className="header  font-bold text-white mx-28">
             <p> best of Playlists</p>
