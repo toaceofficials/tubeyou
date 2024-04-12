@@ -28,7 +28,7 @@ const Welcome = () => {
   useEffect(() => {
     const pushAd = () => {
       try {
-        console.log('hai');
+        console.log("hai");
         const adsbygoogle = window.adsbygoogle;
         adsbygoogle.push({});
         console.log(adsbygoogle);
@@ -36,18 +36,18 @@ const Welcome = () => {
         console.error(e);
       }
     };
-     let interval = setInterval(() => {
-       // Check if Adsense script is loaded every 300ms
-       if (window?.adsbygoogle) {
-         pushAd();
-         // clear the interval once the ad is pushed so that function isn't called indefinitely
-         clearInterval(interval);
-       }
-     }, 300);
+    let interval = setInterval(() => {
+      // Check if Adsense script is loaded every 300ms
+      if (window?.adsbygoogle) {
+        pushAd();
+        // clear the interval once the ad is pushed so that function isn't called indefinitely
+        clearInterval(interval);
+      }
+    }, 300);
 
-     return () => {
-       clearInterval(interval);
-     };
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
   console.log(data?.data?.data);
   return (
@@ -59,8 +59,6 @@ const Welcome = () => {
             style={{ display: "inline-block" }}
             data-ad-client="ca-pub-1284850173204460"
             data-ad-slot="1391362237"
-            data-ad-format="auto"
-            
           ></ins>
         </div>
         <div className="flex flex-col w-full mt-3 mx-auto">
