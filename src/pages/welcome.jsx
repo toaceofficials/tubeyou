@@ -7,6 +7,7 @@ import ty_button_play from "../public/typlayb.svg";
 import blackhole from "../public/blackhole.svg";
 import userRequest from "../utils/userRequest";
 import { Link } from "react-router-dom";
+import PlayerCard from "../components/playercard";
 
 const Welcome = () => {
   const [enabledQuery, setEnabledQuery] = useState(true);
@@ -62,11 +63,8 @@ const Welcome = () => {
             data-ad-slot="1391362237"
           ></ins>
         </div>
-        <div className="flex flex-col w-full mt-3 mx-auto">
-          <div className="header  font-bold text-white mx-28">
-            <p> best of Playlists</p>
-          </div>
-          <div className=" mt-4 ">
+        <div className="flex flex-col w-full mx-auto">
+          <div className="">
             <div className="grid grid-cols-1 gap-y-8 place-content-center md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-5 mx-2">
               {data?.data?.data.map((plays, i) => {
                 adCounter++;
@@ -74,7 +72,7 @@ const Welcome = () => {
                 return (
                   <React.Fragment key={plays.listId}>
                     <Link to={`view/${plays?.listId}`} key={plays.listId}>
-                      <div className="flex flex-col max-h-80 text-white mx-auto rounded-lg mt-1 md:h-48 ">
+                      {/* <div className="flex flex-col max-h-80 text-white mx-auto rounded-lg mt-1 md:h-48 ">
                         <div className="flex items-center flex-row h-6">
                           <div className="  w-1/6 img w-4 h-4 ">
                             <img
@@ -114,12 +112,13 @@ const Welcome = () => {
                             alt=""
                           />
                         </div>
-                      </div>
+                      </div> */}
+                      <PlayerCard plays={plays}></PlayerCard>
                     </Link>
                     {/* Render the ad after every 8th item */}
                     {adCounter % 8 === 0 && (
                       <div className="ad-container">
-                       <h1>adilsha</h1>
+                        <h1>adilsha</h1>
                       </div>
                     )}
                   </React.Fragment>
