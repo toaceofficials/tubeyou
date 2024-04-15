@@ -41,9 +41,9 @@ const View = () => {
 
   return (
     <>
-      <div className="  w-full  flex flex-row ">
+      <div className="w-full flex flex-col lg:flex-row">
         <div
-          className="w-full sm:w-4/6 overflow-y-scroll overscroll-y-auto h-screen scrollbar-hidden "
+          className="w-full mx-auto lg:w-4/6"
           style={{
             // Hide scrollbar for Chrome, Safari, and Opera
             WebkitOverflowScrolling: "touch",
@@ -51,13 +51,13 @@ const View = () => {
             msOverflowStyle: "none", // Hide scrollbar for Internet Explorer and Edge
           }}
         >
-          <div className="flex flex-col text-white mx-auto  mx-10   rounded-lg  ">
+          <div className="flex flex-col text-white rounded-lg  mx-10 lg:mx-auto">
             <div className="w-full">
               <div className="flex flex-col relative bg-transparent	">
                 <img
                   src={dataInto?.logo?.url}
                   alt=""
-                  className="h-32 lg:h-custom-lg md:h-40 sm:h-36 lg:w-full mx-auto rounded-lg "
+                  className="lg:h-custom-lg sm:h-80 lg:w-full mx-auto rounded-lg "
                 />
                 <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
                 <div className="flex"></div>
@@ -67,149 +67,9 @@ const View = () => {
                 <div className="absolute inset-0 bg-black opacity-30 rounded-lg"></div>
               </div>
             </div>
-            <h1 className="font-bold text-lg my-2  border-b-2  border-cyan-950">
-              Adilsha play list
-            </h1>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 place-content-center ">
-              <div className="w-5/6 flex flex-col mx-auto h-40  text-white rounded-lg mt-1 md:h-48 sm:w-full ">
-                <div className="flex items-center flex-row h-6">
-                  <div className="  w-1/6 img w-4 h-4 ">
-                    <img
-                      src={blackhole}
-                      alt=""
-                      className=" w-4 h-4 bg-gray-500 flex items-center rounded-2xl"
-                    />
-                  </div>
-                  <div className="w-4/6">
-                    {" "}
-                    <p
-                      style={{
-                        whiteSpace: "nowrap",
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        maxWidth: "16ch",
-                      }}
-                    >
-                      {" "}
-                      Quran is a gift from Almighty
-                    </p>
-                  </div>
-                  <div className="w-1/6 flex justify-end items-center ml-6">
-                    <img
-                      src={ty_button_play}
-                      alt=""
-                      className=" w-4 h-4  flex"
-                    />
-                    <p className="font-bold text-xs	pl-1">2:20</p>
-                  </div>
-                </div>
-                <div className="w-full mx-auto my-auto h-32 bg-gray-800 rounded-lg md:h-40"></div>
-              </div>
-
-              <div className="w-5/6 flex flex-col mx-auto h-40   text-white rounded-lg mt-1 md:h-48 sm:w-full">
-                <div className="flex items-center flex-row h-6">
-                  <div className="  w-1/6 img w-4 h-4 ">
-                    <img
-                      src={blackhole}
-                      alt=""
-                      className=" w-4 h-4 bg-gray-500 flex items-center rounded-2xl"
-                    />
-                  </div>
-                  <div className="w-4/6">
-                    {" "}
-                    <p
-                      style={{
-                        whiteSpace: "nowrap",
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        maxWidth: "16ch",
-                      }}
-                    >
-                      {" "}
-                      Quran is a gift from Almighty
-                    </p>
-                  </div>
-                  <div className="w-1/6 flex justify-end items-center ml-6">
-                    <img
-                      src={ty_button_play}
-                      alt=""
-                      className=" w-4 h-4  flex"
-                    />
-                    <p className="font-bold text-xs	pl-1">2:20</p>
-                  </div>
-                </div>
-                <div className="w-full mx-auto my-auto h-32 bg-gray-800 rounded-lg md:h-40"></div>
-              </div>
-              <div className="w-5/6 flex flex-col mx-auto h-40   text-white rounded-lg mt-1 md:h-48 sm:w-full">
-                <div className="flex items-center flex-row h-6">
-                  <div className="  w-1/6 img w-4 h-4 ">
-                    <img
-                      src={blackhole}
-                      alt=""
-                      className=" w-4 h-4 bg-gray-500 flex items-center rounded-2xl"
-                    />
-                  </div>
-                  <div className="w-4/6">
-                    {" "}
-                    <p
-                      style={{
-                        whiteSpace: "nowrap",
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        maxWidth: "16ch",
-                      }}
-                    >
-                      {" "}
-                      Quran is a gift from Almighty
-                    </p>
-                  </div>
-                  <div className="w-1/6 flex justify-end items-center ml-6">
-                    <img
-                      src={ty_button_play}
-                      alt=""
-                      className=" w-4 h-4  flex"
-                    />
-                    <p className="font-bold text-xs	pl-1">2:20</p>
-                  </div>
-                </div>
-                <div className="w-full mx-auto my-auto h-32 bg-gray-800 rounded-lg md:h-40"></div>
-              </div>
-
-              <div className="w-34 "></div>
-            </div>
-            {/* <div className="flex flex-row h-20 bg-gray-100 rounded-xl mt-2">
-                <div className="w-2/5 flex justify-center items-center">
-                  <div className="h-16 w-24 bg-gray-950 rounded-lg ">
-                    <img className="h-16 w-24" src={ty_button_play} alt="" />
-                  </div>
-                </div>
-                <div className="w-3/5 flex text-gray-900 justify-start items-center">
-                  <div className="h-16 w-full ">
-                    <p
-                      style={{
-                        whiteSpace: "nowrap",
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        maxWidth: "16ch",
-                      }}
-                    >
-                      {" "}
-                      Quran is a gift from Almighty
-                    </p>
-                    <div className="flex flex-row jusitfy-center items-center mt-1">
-                      <img
-                        src={ty_button_play}
-                        alt=""
-                        className=" w-4 h-4  flex "
-                      />
-                      <p className="font-bold text-xs	pl-1">2:20</p>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
           </div>
         </div>
-        <div className="hidden lg:block  sm:w-2/6 text-white ">
+        <div className="w-full mt-10 text-white lg:w-2/6 lg:m-0">
           <div className=" bg-black-200   rounded-lg border  border-cyan-950	mx-10">
             <div className="h-10 p-2 font-bold text-sm py-auto ">
               Popural playlist
@@ -269,11 +129,107 @@ const View = () => {
           </div>
         </div>{" "}
       </div>
+      <h1 className="font-bold text-lg my-2  border-b-2  border-cyan-950">
+        Adilsha play list
+      </h1>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 place-content-center ">
+        <div className="w-5/6 flex flex-col mx-auto h-80  text-white rounded-lg mt-1 md:h-48 sm:w-full ">
+          <div className="flex items-center flex-row h-6">
+            <div className="  w-1/6 img w-4 h-4 ">
+              <img
+                src={blackhole}
+                alt=""
+                className=" w-4 h-4 bg-gray-500 flex items-center rounded-2xl"
+              />
+            </div>
+            <div className="w-4/6">
+              {" "}
+              <p
+                style={{
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  maxWidth: "16ch",
+                }}
+              >
+                {" "}
+                Quran is a gift from Almighty
+              </p>
+            </div>
+            <div className="w-1/6 flex justify-end items-center ml-6">
+              <img src={ty_button_play} alt="" className=" w-4 h-4  flex" />
+              <p className="font-bold text-xs	pl-1">2:20</p>
+            </div>
+          </div>
+          <div className="w-full mx-auto my-auto h-56 bg-gray-800 rounded-lg md:h-40"></div>
+        </div>
+
+        <div className="w-5/6 flex flex-col mx-auto h-80   text-white rounded-lg mt-1 md:h-48 sm:w-full">
+          <div className="flex items-center flex-row h-6">
+            <div className="  w-1/6 img w-4 h-4 ">
+              <img
+                src={blackhole}
+                alt=""
+                className=" w-4 h-4 bg-gray-500 flex items-center rounded-2xl"
+              />
+            </div>
+            <div className="w-4/6">
+              {" "}
+              <p
+                style={{
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  maxWidth: "16ch",
+                }}
+              >
+                {" "}
+                Quran is a gift from Almighty
+              </p>
+            </div>
+            <div className="w-1/6 flex justify-end items-center ml-6">
+              <img src={ty_button_play} alt="" className=" w-4 h-4  flex" />
+              <p className="font-bold text-xs	pl-1">2:20</p>
+            </div>
+          </div>
+          <div className="w-full mx-auto my-auto h-56 bg-gray-800 rounded-lg md:h-40"></div>
+        </div>
+        <div className="w-5/6 flex flex-col mx-auto h-80   text-white rounded-lg mt-1 md:h-48 sm:w-full">
+          <div className="flex items-center flex-row h-6">
+            <div className="  w-1/6 img w-4 h-4 ">
+              <img
+                src={blackhole}
+                alt=""
+                className=" w-4 h-4 bg-gray-500 flex items-center rounded-2xl"
+              />
+            </div>
+            <div className="w-4/6">
+              {" "}
+              <p
+                style={{
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  maxWidth: "16ch",
+                }}
+              >
+                {" "}
+                Quran is a gift from Almighty
+              </p>
+            </div>
+            <div className="w-1/6 flex justify-end items-center ml-6">
+              <img src={ty_button_play} alt="" className=" w-4 h-4  flex" />
+              <p className="font-bold text-xs	pl-1">2:20</p>
+            </div>
+          </div>
+          <div className="w-full mx-auto my-auto h-56 bg-gray-800 rounded-lg md:h-40"></div>
+        </div>
+
+        <div className="w-34 "></div>
+      </div>
       <style></style>
     </>
   );
 };
-
-
 
 export default View;

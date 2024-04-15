@@ -10,13 +10,15 @@ const Layout = () => {
 
   const contentClasses = classNames(
     " flex flex-col ml-20 transition duration-200 ease-in-out h-screen ",
-
     isOpen ? "" : ""
   );
   const handleSidebarToggle = (isOpen) => {
     setIsOpen(isOpen);
   };
+  const closeToggle = () => {
 
+    
+  };
   return (
     <>
       {/* <Helmet>
@@ -30,7 +32,7 @@ const Layout = () => {
       {isOpen && (
         <div
           className="fixed inset-0 bg-black opacity-50 z-40"
-          onClick={() => handleSidebarToggle(false)}
+          onClick={() => closeToggle()}
         ></div>
       )}
       <div className={contentClasses}>

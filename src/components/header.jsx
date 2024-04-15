@@ -85,30 +85,30 @@ const Header = ({CloseSuggestion}) => {
         )}
 
         <div className="w-3/6 flex text-white mx-2 hidden md:block mx-20 justify-center ">
-          <div className="flex w-4/5 flex-row flex h-10 bg-gray-950 mx-auto  rounded-2xl w-3/5 mx-auto ">
-            <div className=" flex w-full relative">
+          <div className="flex w-4/5 flex-row flex h-10  bg-zinc-950 mx-auto border border-zinc-700	 rounded-3xl w-3/5 mx-auto relative">
+            <div className=" flex w-full ">
               <input
                 type="text"
                 value={inputValue}
                 onChange={handleInputChange}
-                className="border-none outline-none bg-gray-950 text-gray-600 mx-auto h-10 w-4/5 my-auto"
+                className="border-none outline-none bg-zinc-950 text-gray-600 mx-auto h-8 pb-1 w-4/5 my-auto"
                 placeholder="Type somthing"
               />
-              {suggestions.length > 0 && (
-                <div className="absolute w-5/6 bg-gray-950  rounded mt-12 mx-20 overflow-hidden border border-blue-700	">
-                  {suggestions.map((suggestion, index) => (
-                    <div
-                      key={index}
-                      className="px-4  py-2 cursor-pointer hover:bg-gray-800 "
-                      onClick={() => handleSuggestionClick(suggestion)}
-                    >
-                      {suggestion}
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
-            <div className="flex w-1/6 ">
+            {suggestions.length > 0 && (
+              <div className="absolute w-full bg-gray-950  rounded-xl mt-11  overflow-hidden border border-blue-700	">
+                {suggestions.map((suggestion, index) => (
+                  <div
+                    key={index}
+                    className="px-4  py-2 cursor-pointer hover:bg-gray-800"
+                    onClick={() => handleSuggestionClick(suggestion)}
+                  >
+                    {suggestion}
+                  </div>
+                ))}
+              </div>
+            )}
+            <div className="flex w-2/6 border border-zinc-700	rounded-3xl bg-zinc-800 hover:bg-zinc-700">
               <div className="mx-auto my-auto text-center">
                 <button type="button">search</button>
               </div>

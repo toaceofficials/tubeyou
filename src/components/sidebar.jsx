@@ -5,13 +5,13 @@ import classNames from "classnames";
 const SideBar = ({ onToggle }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
+  const handleSidebarToggle = (isOpen) => {
+    setIsOpen(isOpen);
   };
 
   const handleOnclick = (action) => {
     setIsOpen(action);
-    onToggle(!isOpen);
+    onToggle(action);
   };
 
   const sidebarClasses = classNames(

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import classNames from "classnames";
 import SideBar from "../components/sidebar";
@@ -24,6 +24,7 @@ const Welcome = () => {
     },
   });
   let adsbygoogle;
+  let adCounter = 0; // Initialize a counter variable
 
   useEffect(() => {
     const pushAd = () => {
@@ -66,52 +67,62 @@ const Welcome = () => {
             <p> best of Playlists</p>
           </div>
           <div className=" mt-4 ">
-            <div className="grid gr20-cols-1 gap-y-8 place-content-center md:grid-cols-2 sm:grid-cols-2 mx-10 lg:grid-cols-4 lg:mx-28">
+            <div className="grid grid-cols-1 gap-y-8 place-content-center md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-5 mx-2">
               {data?.data?.data.map((plays, i) => {
+                adCounter++;
+
                 return (
-                  <Link to={`view/${plays?.listId}`} key={plays.listId}>
-                    <div className="w-60 flex flex-col h-40 text-white mx-auto rounded-lg mt-1 md:h-48 w-72">
-                      <div className="flex items-center flex-row h-6">
-                        <div className="  w-1/6 img w-4 h-4 ">
+                  <React.Fragment key={plays.listId}>
+                    <Link to={`view/${plays?.listId}`} key={plays.listId}>
+                      <div className="flex flex-col max-h-80 text-white mx-auto rounded-lg mt-1 md:h-48 ">
+                        <div className="flex items-center flex-row h-6">
+                          <div className="  w-1/6 img w-4 h-4 ">
+                            <img
+                              src={plays?.logo?.url}
+                              alt=""
+                              className=" w-4 h-4 bg-gray-500 flex items-center rounded-2xl"
+                            />
+                          </div>
+                          <div className="w-4/6">
+                            {" "}
+                            <p
+                              style={{
+                                whiteSpace: "nowrap",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                maxWidth: "16ch",
+                              }}
+                            >
+                              {" "}
+                              Quran is a gift from Almighty
+                            </p>
+                          </div>
+                        
+                          <div className="w-1/6 flex justify-end items-center ml-6">
+                            <img
+                              src={ty_button_play}
+                              alt=""
+                              className=" w-4 h-4  flex"
+                            />
+                            <p className="font-bold text-xs	pl-1">2:20</p>
+                          </div>
+                        </div>
+                        <div className="w-full mx-auto my-auto h-56 rounded-lg md:h-40">
                           <img
                             src={plays?.logo?.url}
+                            className=" w-full h-full overflow-hidden rounded-lg"
                             alt=""
-                            className=" w-4 h-4 bg-gray-500 flex items-center rounded-2xl"
                           />
                         </div>
-                        <div className="w-4/6">
-                          {" "}
-                          <p
-                            style={{
-                              whiteSpace: "nowrap",
-                              overflow: "hidden",
-                              textOverflow: "ellipsis",
-                              maxWidth: "16ch",
-                            }}
-                          >
-                            {" "}
-                            Quran is a gift from Almighty
-                          </p>
-                        </div>
-
-                        <div className="w-1/6 flex justify-end items-center ml-6">
-                          <img
-                            src={ty_button_play}
-                            alt=""
-                            className=" w-4 h-4  flex"
-                          />
-                          <p className="font-bold text-xs	pl-1">2:20</p>
-                        </div>
                       </div>
-                      <div className="w-full mx-auto my-auto h-32 rounded-lg md:h-40">
-                        <img
-                          src={plays?.logo?.url}
-                          className=" w-full h-full overflow-hidden rounded-lg"
-                          alt=""
-                        />
+                    </Link>
+                    {/* Render the ad after every 8th item */}
+                    {adCounter % 8 === 0 && (
+                      <div className="ad-container">
+                       <h1>adilsha</h1>
                       </div>
-                    </div>
-                  </Link>
+                    )}
+                  </React.Fragment>
                 );
               })}
 
