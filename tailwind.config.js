@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       height: {
-        "custom-lg": "545px",
+        "custom-lg": "255px",
       },
     },
   },

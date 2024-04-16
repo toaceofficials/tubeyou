@@ -54,6 +54,7 @@ const Welcome = () => {
   console.log(data?.data?.data);
   return (
     <>
+      <div data-banner-id="546418"></div>
       <div className=" w-full ">
         <div className="flex text-white mx-auto px-12">
           <ins

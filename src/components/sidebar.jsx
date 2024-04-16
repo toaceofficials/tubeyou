@@ -19,7 +19,7 @@ const SideBar = ({ onToggle }) => {
   };
 
   const sidebarClasses = classNames(
-    "fixed top-0  z-50 h-screen overflow-y-auto ",
+    "  fixed top-0 bottom-0 z-50 overflow-y-auto ",
     isOpen
       ? "w-60 bg-zinc-900 text-white transition-width duration-100 ease-in-out "
       : "w-16 bg-zinc-900 text-gray-200 transition-width duration-100 ease-in-out"

@@ -54,20 +54,27 @@ const View = () => {
             msOverflowStyle: "none", // Hide scrollbar for Internet Explorer and Edge
           }}
         >
-          <div className="flex flex-col text-white rounded-lg mx-1 lg:mx-10 ">
+          <div className="flex flex-col text-white rounded-lg mx-1  ">
             <div className="w-full">
-              <div className="flex flex-col relative bg-transparent	">
-                <img
-                  src={dataInto?.logo?.url}
-                  alt=""
-                  className="h-56 lg:h-custom-lg sm:h-80 lg:w-full mx-auto rounded-lg "
-                />
-                <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
-                <div className="flex"></div>
-                <p className="absolute inset-0 flex items-center justify-center ">
-                  These Video will be open on any content sharing platforms
-                </p>
-                <div className="absolute inset-0 bg-black opacity-30 rounded-lg"></div>
+              <div className="flex flex-col bg-transparent	">
+                <div className="relative">
+                  <img
+                    src={dataInto?.logo?.url}
+                    alt=""
+                    className="h-56 lg:h-custom-lg sm:h-80 lg:w-full mx-auto rounded-lg "
+                  />
+                  <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+                  <div className="flex">
+                    <p className="absolute inset-0 flex items-center justify-center text-sm md:text-lg ">
+                      These Video will be open on any content sharing platforms
+                    </p>
+                  </div>
+                  <div className="absolute inset-0 bg-black opacity-30 rounded-lg"></div>
+                </div>
+
+                <div className="w-full bg-gray-800 backdrop-blur-lg h-56 lg:h-custom-lg sm:h-80   rounded-lg mt-2">
+                  <h1 className="">gello</h1>
+                </div>
               </div>
             </div>
           </div>
@@ -86,46 +93,75 @@ const View = () => {
                 msOverflowStyle: "none", // Hide scrollbar for Internet Explorer and Edge
               }}
             >
-              <div className=" flex flex-col py-3  ">
-                {dataInto?.play_list.map((views, i) => {
-                  return (
-                    <div
-                      className={`h-16 mx-4 px-3 py-3 rounded-md flex flex-row items-center hover:bg-gray-800 mt-2 ${
-                        selectedDivIndex === i
-                          ? "border-dashed border-2 border-slate-700"
-                          : ""
-                      }`}
-                      key={i + 1}
-                      onClick={() => {
-                        handleDivClick(i);
-                        handelRedirect(views.link);
-                      }}
-                    >
-                      <div className="w-6 h-13 flex flex-row justify-center items-center lg:w-8">
-                        <p>{views.playNo}</p>
-                        <img
-                          src={dataInto?.logo?.url}
-                          alt=""
-                          className="h-4 pl-1"
-                        />
-                      </div>
-                      <div className=" flex items-center w-2/6 h-16 mx-2 rounded-md sm:w-1/6 md:w-1/4 ">
-                        {" "}
-                        <img
-                          src={dataInto?.logo?.url}
-                          alt=""
-                          className="h-14 w-full rounded-md"
-                        />
-                      </div>
-                      <div className="w-3/6 h-16  ">
-                        {" "}
-                        <p> {views.acc_code} </p>
-                        <p>Adilsha</p>
-                      </div>
+              {isLoading ? (
+                <div
+                  role="status"
+                  class="max-w-md p-4 space-y-4 border border-gray-200 divide-y divide-gray-200 rounded shadow animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700"
+                >
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+                      <div class="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
                     </div>
-                  );
-                })}
-              </div>
+                    <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+                  </div>
+                  <LoadingIndicator />
+                  <LoadingIndicator />
+
+                  <LoadingIndicator />
+
+                  <LoadingIndicator />
+
+                  <LoadingIndicator />
+
+                  <LoadingIndicator />
+
+                  <LoadingIndicator />
+
+                  <span class="sr-only">Loading...</span>
+                </div>
+              ) : (
+                <div className=" flex flex-col py-3  ">
+                  {dataInto?.play_list.map((views, i) => {
+                    return (
+                      <div
+                        className={`h-16 mx-4 px-3 py-3 rounded-md flex flex-row items-center hover:bg-gray-800 mt-2 ${
+                          selectedDivIndex === i
+                            ? "border-dashed border-2 border-slate-700"
+                            : ""
+                        }`}
+                        key={i + 1}
+                        onClick={() => {
+                          handleDivClick(i);
+                          handelRedirect(views.link);
+                        }}
+                      >
+                        <div className="w-6 h-13 flex flex-row justify-center items-center lg:w-8">
+                          <p>{views.playNo}</p>
+                          <img
+                            src={dataInto?.logo?.url}
+                            alt=""
+                            className="h-4 pl-1"
+                          />
+                        </div>
+                        <div className=" flex items-center w-2/6 h-16 mx-2 rounded-md sm:w-1/6 md:w-1/4 ">
+                          {" "}
+                          <img
+                            src={dataInto?.logo?.url}
+                            alt=""
+                            className="h-14 w-full rounded-md"
+                          />
+                        </div>
+                        <div className="w-3/6 h-16  ">
+                          {" "}
+                          <p> {views.acc_code} </p>
+                          <p>Adilsha</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           </div>
         </div>{" "}
@@ -147,6 +183,17 @@ const View = () => {
       <style></style>
     </>
   );
+  function LoadingIndicator() {
+    return (
+      <div className="flex items-center justify-between pt-4">
+        <div>
+          <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+          <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+        </div>
+        <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+      </div>
+    );
+  }
 };
 
 export default View;
